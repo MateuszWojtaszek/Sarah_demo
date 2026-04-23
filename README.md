@@ -63,4 +63,4 @@ Używając Docker Compose, stwórz środowisko umożliwiające zbieranie statyst
 
 Stworzone wykresy udokumentuj zrzutami ekranu.
 
-[![Demo SARAh](screenshots/task1/start.png)]([https://github.com/user-attachments/assets/afafa8b0-1388-4b86-ac97-78f693e1d009](https://github.com/MateuszWojtaszek/Sarah_demo/releases/download/V1/demo_sarah.mov))
+[![Demo SARAh](screenshots/task1/start.png)](https://github.com/MateuszWojtaszek/Sarah_demo/releases/download/V1/demo_sarah.mov)
