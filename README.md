@@ -1,6 +1,6 @@
 # 🦊 SARAh — AI Research Assistant
 
-SARAh (Smart Automated Research Assistant) to aplikacja webowa zbudowana w Streamlit, która automatycznie przeszukuje internet, pobiera artykuły i generuje zwięzłe podsumowania przy użyciu modeli LLM od NVIDIA.
+SARAh to aplikacja webowa zbudowana w Streamlit, która automatycznie przeszukuje internet, pobiera artykuły i generuje zwięzłe podsumowania przy użyciu modeli LLM od NVIDIA.
 
 [![Demo SARAh](screenshots/task1/start.png)](https://github.com/user-attachments/assets/85b05c03-7722-4262-8ff8-a1ed433ab845)
 
