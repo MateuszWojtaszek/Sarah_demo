@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s # co ile zbierać metryki
+
+scrape_configs:
+  - job_name: sarah
+    static_configs:
+      - targets: ["sarah:8000"] # skąd zbierac metryki

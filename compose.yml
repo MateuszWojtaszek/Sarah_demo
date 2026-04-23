@@ -1,0 +1,27 @@
+services:
+  sarah:
+    build: .
+    ports:
+      - "8501:8501"
+      - "8000:8000"
+    env_file:
+      - .env
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml # plik konfiguracyjny do kontenera. Bez tego Prometheus nie wiedziałby skąd scrapeować metryki
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env # haslo do grafany
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning # pliki auto-konfiguracji (datasource + lokalizacja dashboardów). Grafana czyta ten folder przy starcie i konfiguruje się automatycznie.
+      - ./grafana/dashboards:/var/lib/grafana/dashboards # tu jest sarah.json. Grafana wie że ma tam szukać dashboardów (dzieki provisioning/dashboards/dashboard.yml), więc ładuje go automatycznie.
+
+

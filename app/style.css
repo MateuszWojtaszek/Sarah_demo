@@ -1,0 +1,363 @@
+/* CSS CALKOWICIE WYGENEROWANY PRZEZ CLAUDE, nie ukrywam tego ale tez nie był on wymagany, uzyte na potrzeby pozniejszczego projektu SARAh w kole KN KoNaR*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Hide default Streamlit chrome */
+#MainMenu, footer, header { visibility: hidden; }
+.block-container {
+    padding: 3rem 2rem 4rem !important;
+    max-width: 920px !important;
+}
+
+/* ── Background — ciepłe kremowe z czerwono-pandowym klimatem */
+.stApp {
+    background: oklch(96% 0.018 60);
+}
+.stApp::before {
+    content: '';
+    position: fixed;
+    top: -180px; right: -180px;
+    width: 560px; height: 560px;
+    border-radius: 50%;
+    background: oklch(58% 0.19 32);   /* rdzawy czerwień */
+    filter: blur(110px);
+    opacity: 0.20;
+    pointer-events: none;
+    z-index: 0;
+}
+.stApp::after {
+    content: '';
+    position: fixed;
+    bottom: -120px; left: -120px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: oklch(40% 0.12 150);  /* leśna zieleń */
+    filter: blur(110px);
+    opacity: 0.14;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Header */
+.sarah-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.6s ease both;
+}
+.sarah-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: oklch(48% 0.10 32);
+    margin-bottom: 6px;
+}
+.sarah-title {
+    font-family: 'DM Serif Display', Georgia, serif !important;
+    font-size: clamp(36px, 6vw, 58px) !important;
+    line-height: 1.1 !important;
+    color: #382c28 !important; /* Wymuszony bardzo ciemny brąz (prawie czarny) */
+    margin: 0 !important;
+}
+.sarah-title em {
+    font-style: italic;
+    color: oklch(52% 0.19 32);
+}
+.sarah-sub {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    color: oklch(44% 0.06 40);
+}
+
+/* Zgodnie z poprawką klasa .sarah-avatar-wrap została usunięta z CSS, 
+aby pozbyć się dziwnego prostokąta w tle obrazka. */
+
+.sarah-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 99px;
+    border: 1px solid oklch(86% 0.028 55);
+    background: oklch(98% 0.010 60);
+    color: oklch(48% 0.06 40);
+}
+.badge-searching {
+    background: oklch(90% 0.10 60 / 0.40);
+    border-color: oklch(65% 0.18 55);
+    color: oklch(42% 0.18 50);
+}
+.badge-thinking {
+    background: oklch(90% 0.10 32 / 0.30);
+    border-color: oklch(58% 0.19 32);
+    color: oklch(40% 0.18 32);
+}
+.badge-done {
+    background: oklch(88% 0.10 150 / 0.28);
+    border-color: oklch(48% 0.16 150);
+    color: oklch(34% 0.14 150);
+}
+
+.sarah-caption {
+    font-size: 13px;
+    color: oklch(46% 0.06 40);
+    text-align: center;
+    min-height: 20px;
+}
+
+/* ── Input overrides */
+div[data-testid="stTextInput"] input {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 15px !important;
+    border-radius: 12px !important;
+    border: 1.5px solid oklch(86% 0.028 55) !important;
+    background: oklch(96% 0.018 60) !important;
+    color: oklch(22% 0.04 30) !important;
+    padding: 14px 18px !important;
+}
+div[data-testid="stTextInput"] input:focus {
+    border-color: oklch(52% 0.19 32) !important;
+    box-shadow: 0 0 0 3px oklch(52% 0.19 32 / 0.14) !important;
+}
+div[data-testid="stTextInput"] input::placeholder {
+    color: oklch(55% 0.05 40) !important;
+    opacity: 1 !important;
+}
+
+/* ── Buttons */
+div[data-testid="stButton"] > button {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    background: oklch(22% 0.04 30) !important;
+    color: oklch(97% 0.010 60) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.6rem 1.4rem !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+    box-shadow: 0 2px 8px oklch(22% 0.04 30 / 0.22) !important;
+}
+div[data-testid="stButton"] > button p,
+div[data-testid="stButton"] > button span,
+div[data-testid="stButton"] > button div {
+    color: oklch(97% 0.010 60) !important;
+}
+div[data-testid="stButton"] > button:hover {
+    background: oklch(52% 0.19 32) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 16px oklch(52% 0.19 32 / 0.30) !important;
+}
+
+/* ── Progress bar */
+div[data-testid="stProgress"] > div {
+    border-radius: 99px !important;
+    background: oklch(90% 0.022 55) !important;
+    height: 6px !important;
+}
+div[data-testid="stProgress"] > div > div {
+    border-radius: 99px !important;
+    background: linear-gradient(90deg, oklch(65% 0.19 32), oklch(58% 0.18 50), oklch(52% 0.16 32)) !important;
+}
+
+/* ── Image sizing */
+div[data-testid="stImage"] img {
+    width: 280px !important; 
+    max-width: 100%;
+    border-radius: 20px !important; /* Delikatne zaokrąglenie zamiast twardego cięcia na okrągło */
+    display: block;
+    margin: 0 auto;
+}
+
+/* ── Result & Stats cards */
+.result-card, .stats-card {
+    background: oklch(99% 0.008 60);
+    border: 1px solid oklch(86% 0.028 55);
+    border-radius: 20px;
+    box-shadow: 0 2px 20px oklch(30% 0.08 32 / 0.07);
+    overflow: hidden;
+    margin-top: 1.5rem;
+    animation: fadeUp 0.5s ease both;
+}
+.result-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    background: oklch(93% 0.022 55);
+    border-bottom: 1px solid oklch(86% 0.028 55);
+}
+.result-panda { font-size: 22px; line-height: 1; }
+.result-name { font-weight: 600; font-size: 14px; color: oklch(22% 0.04 30); }
+.result-tag {
+    margin-left: auto;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: oklch(34% 0.14 150);
+    background: oklch(88% 0.10 150 / 0.28);
+    padding: 3px 10px; border-radius: 99px;
+}
+.result-body {
+    padding: 22px;
+    font-size: 15px;
+    line-height: 1.75;
+    color: oklch(22% 0.04 30);
+}
+.result-body strong { color: oklch(52% 0.19 32); }
+.result-chips-row {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 14px; padding-top: 14px;
+    border-top: 1px solid oklch(86% 0.028 55);
+}
+.result-chip {
+    font-size: 12px; font-weight: 500;
+    padding: 5px 12px; border-radius: 99px;
+    background: oklch(93% 0.022 55);
+    border: 1px solid oklch(86% 0.028 55);
+    color: oklch(44% 0.06 40);
+    display: inline-block;
+}
+
+/* ── Section label */
+.section-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: oklch(48% 0.10 32); margin-bottom: 4px;
+}
+
+/* ── Separator */
+hr.panda-sep {
+    border: none; border-top: 1px solid oklch(86% 0.028 55); margin: 1.8rem 0;
+}
+
+/* ── Pulse animation */
+@keyframes pandaPulse {
+    0%,100% { box-shadow: 0 8px 32px oklch(30% 0.08 32 / 0.18), 0 0 0 0 oklch(58% 0.19 32 / 0.35); }
+    50%      { box-shadow: 0 8px 32px oklch(30% 0.08 32 / 0.18), 0 0 0 16px oklch(58% 0.19 32 / 0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+/* Naprawa rozwijanego paska "Zobacz jak Sarah analizuje..." */
+div[data-testid="stExpander"] details summary {
+    background-color: transparent !important;
+    color: #382c28 !important; /* Ciemny brązowy kolor tekstu */
+    font-weight: 600 !important;
+    font-family: 'DM Sans', sans-serif !important;
+    border: none !important;
+}
+
+div[data-testid="stExpander"] {
+    background-color: oklch(96% 0.018 60) !important;
+    border: 1.5px solid oklch(86% 0.028 55) !important;
+    border-radius: 12px !important;
+}
+
+/* Naprawa małych napisów "Redukcja tekstu" (st.caption) */
+div[data-testid="stCaptionContainer"] p {
+    color: oklch(44% 0.06 40) !important; /* Czytelny szaro-brązowy */
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    background: transparent !important;
+}
+
+/* ── Kafelki Metryk (Human Metrics) ── */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+.kpi-card {
+    background: oklch(98% 0.010 60);
+    border: 1px solid oklch(86% 0.028 55);
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px oklch(30% 0.08 32 / 0.05);
+}
+.kpi-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+.kpi-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: oklch(22% 0.04 30);
+    margin-bottom: 4px;
+    font-family: 'DM Serif Display', serif !important;
+}
+.kpi-label {
+    font-size: 12px;
+    color: oklch(44% 0.06 40);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ── Tekst Markdown (kolumny + poziom główny) */
+div[data-testid="stColumn"] h1,
+div[data-testid="stColumn"] h2,
+div[data-testid="stColumn"] h3,
+div[data-testid="stColumn"] p,
+div[data-testid="stColumn"] li,
+div[data-testid="stColumn"] strong,
+div[data-testid="stMarkdownContainer"] h1,
+div[data-testid="stMarkdownContainer"] h2,
+div[data-testid="stMarkdownContainer"] h3,
+div[data-testid="stMarkdownContainer"] h4,
+div[data-testid="stMarkdownContainer"] p,
+div[data-testid="stMarkdownContainer"] li,
+div[data-testid="stMarkdownContainer"] strong,
+div[data-testid="stMarkdownContainer"] em {
+    color: oklch(22% 0.04 30) !important;
+}
+div[data-testid="stColumn"] a,
+div[data-testid="stMarkdownContainer"] a {
+    color: oklch(52% 0.19 32) !important;
+    text-decoration: underline !important;
+}
+
+/* ── Przypisy KPI */
+.kpi-footnotes {
+    font-size: 11px;
+    color: oklch(50% 0.06 40);
+    line-height: 1.6;
+    padding: 8px 4px 0;
+    border-top: 1px solid oklch(86% 0.028 55);
+}
+
+/* ── Radio (wybór modelu) */
+div[data-testid="stRadio"] label,
+div[data-testid="stRadio"] label p,
+div[data-testid="stRadio"] label span,
+div[data-testid="stRadio"] div[role="radiogroup"] label p {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: oklch(22% 0.04 30) !important;
+}
+div[data-testid="stRadio"] > div {
+    gap: 8px !important;
+}
+div[data-testid="stRadio"] span[data-baseweb="radio"] div {
+    border-color: oklch(65% 0.10 32) !important;
+}
+div[data-testid="stRadio"] span[aria-checked="true"] div {
+    background-color: oklch(52% 0.19 32) !important;
+    border-color: oklch(52% 0.19 32) !important;
+}
